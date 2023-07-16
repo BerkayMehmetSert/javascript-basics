@@ -14,6 +14,7 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Veri Tipi Dönüşümleri](#veri-tipi-dönüşümleri)
 * [Operatörler](#operatörler)
 * [Koşullu İfadeler](#koşullu-ifadeler)
+* [Döngüler](#döngüler)
 
 ### JavaScript Nedir
 
@@ -650,3 +651,81 @@ console.log("Bugün " + dayName);
 Koşullu ifadeler, programın belirli koşullara göre akışını kontrol etmek ve farklı senaryolara uygun tepkiler vermek
 için kullanılır. Programların daha esnek ve karmaşık işlevselliğe sahip olmasını sağlarlar. Doğru koşullu ifadeler
 kullanarak, kodunuzun daha okunabilir ve anlaşılabilir olmasını sağlayabilirsiniz.
+
+### Döngüler
+
+JavaScript döngüleri, belirli bir işlemi tekrarlamak için kullanılan yapılardır. Bu tekrarlamalar, bir dizi veriyi
+işlemek, belirli koşullar sağlanana kadar işlem yapmak veya bir liste veya dizi üzerinde gezinmek gibi farklı amaçlarla
+kullanılabilir. Döngüler, programın daha verimli ve dinamik olmasını sağlayan önemli bir yapıdır. JavaScript'te yaygın
+olarak kullanılan döngüler şunlardır:
+
+1. **for Döngüsü:** for döngüsü, belirtilen bir başlangıç değeriyle başlar, belirli bir koşul sağlandığı sürece tekrar
+   eder ve her döngü adımında bir sayaç değişkeni arttırılır.
+
+Örnek:
+
+```javascript
+for (let i = 0; i < 5; i++) {
+    console.log("Döngü adımı: " + i);
+}
+```
+
+2. **while Döngüsü:** while döngüsü, belirli bir koşul sağlandığı sürece tekrar eder. Döngü koşulu başlangıçta doğru
+   olmalıdır, aksi takdirde döngü hiç çalışmayabilir.
+
+Örnek:
+
+```javascript
+let i = 0;
+while (i < 5) {
+    console.log("Döngü adımı: " + i);
+    i++;
+}
+```
+
+3. **do-while Döngüsü:** do...while döngüsü, döngü içeriğini en az bir kez çalıştırır ve ardından belirtilen koşulu
+   kontrol eder. Koşul sağlandığı sürece döngü tekrar eder.
+
+Örnek:
+
+```javascript
+let i = 0;
+do {
+    console.log("Döngü adımı: " + i);
+    i++;
+} while (i < 5);
+```
+
+4. **for...in Döngüsü:** for...in döngüsü, bir nesnenin (Object) özelliklerini üzerinde gezinmek için kullanılır.
+
+Örnek:
+
+```javascript
+const person = {
+    name: "John",
+    age: 30,
+    occupation: "Developer"
+};
+
+for (let prop in person) {
+    console.log(prop + ": " + person[prop]);
+}
+```
+
+5. **for...of Döngüsü:** for...of döngüsü, bir diziyi, dizeyi veya diğer veri yapılarını üzerinde gezinmek için
+   kullanılır.
+
+Örnek:
+
+```javascript
+const colors = ["red", "green", "blue"];
+
+for (let color of colors) {
+    console.log(color);
+}
+```
+
+Döngüler, programlamada tekrarlayan işlemleri kolaylaştıran ve kodun daha az tekrarlı ve daha düzenli olmasını sağlayan
+önemli bir yapıdır. Döngüler sayesinde, verileri listelemek, hesaplamalar yapmak, verileri filtrelemek ve diğer birçok
+işlemi yapmak daha kolay ve etkili hale gelir. Doğru döngü tipini ve koşulları seçmek, verimli ve hatasız kod yazmanızı
+sağlar.

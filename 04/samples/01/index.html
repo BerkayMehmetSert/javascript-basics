@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 1</title>
+</head>
+<body>
+<script>
+    let number;
+    const question = "Enter a number.";
+
+    number = prompt(question);
+    number = parseFloat(number); // convert string to number
+
+    for (let i = 0; i <= number; i++) {
+        let result = i * i;
+        document.write(i + " * " + i + " = " + result + "<br>");
+    }
+</script>
+</body>
+</html>

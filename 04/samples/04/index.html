@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 4</title>
+</head>
+<body>
+<script>
+    let number;
+    let result = 0;
+    const question = "Enter a number: ";
+    const answer = "The sum of all numbers from 0 to ";
+    number = prompt(question);
+    number = parseInt(number); // convert string to number
+
+    for (let i = 0; i < number; i++) {
+        result += i;
+    }
+
+    document.write(answer + number + " is " + result);
+</script>
+</body>
+</html>
