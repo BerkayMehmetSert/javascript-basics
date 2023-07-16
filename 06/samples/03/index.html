@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 3</title>
+</head>
+<body>
+<script>
+    class Triangle {
+        static width;
+        static height;
+
+        area() {
+            return this.width * this.height / 2;
+        }
+    }
+
+    let triangle = new Triangle();
+    triangle.width = prompt("Enter the width of the triangle: ");
+    triangle.height = prompt("Enter the height of the triangle: ");
+    triangle.width = parseInt(triangle.width); // Convert string to number
+    triangle.height = parseInt(triangle.height); // Convert string to number
+
+    document.write("Width: " + triangle.width + "<br>");
+    document.write("Height: " + triangle.height + "<br>");
+    document.write("Area: " + triangle.area() + "<br>");
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 4</title>
+</head>
+<body>
+<script>
+    class Car {
+        constructor(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+        }
+
+        info() {
+            return this.year + " " + this.brand + " " + this.model;
+        }
+
+        run() {
+            return "The " + this.info() + " is running.";
+        }
+    }
+
+    class SportsCar extends Car {
+        constructor(brand, model, year, maxSpeed) {
+            super(brand, model, year);
+            this.maxSpeed = maxSpeed;
+        }
+
+        run() {
+            return "The " + this.info() + " is running at " + this.maxSpeed + " mph."; // info() metodunu çağırarak düzeltme yapıldı.
+        }
+    }
+
+    class Truck extends Car {
+        constructor(brand, model, year, maxLoad) {
+            super(brand, model, year);
+            this.maxLoad = maxLoad;
+        }
+
+        run() {
+            return "The " + this.info() + " is running with " + this.maxLoad + " lbs.";
+        }
+    }
+
+    let myCar = new Car("BMW", "X5", 2019);
+    let mySportsCar = new SportsCar("Ferrari", "F8", 2020, 200);
+    let myTruck = new Truck("Volvo", "FH16", 2020, 40000);
+
+    document.write(myCar.run() + "<br>");
+    document.write(mySportsCar.run() + "<br>");
+    document.write(myTruck.run() + "<br>");
+</script>
+</body>
+</html>

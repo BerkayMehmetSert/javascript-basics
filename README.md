@@ -17,6 +17,7 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Döngüler](#döngüler)
 * [Fonksiyonlar](#fonksiyonlar)
 * [Gömülü Fonksiyonlar](#gömülü-fonksiyonlar)
+* [Nesne Tabanlı Programlama](#nesne-tabanlı-programlama)
 
 ### JavaScript Nedir
 
@@ -905,3 +906,105 @@ let ceilNumber = Math.ceil(2.1); // Değeri 3'e yuvarlar (üst tamsayıya dönü
 
 Gömülü JavaScript fonksiyonları, programlamayı kolaylaştırır ve çeşitli işlemleri hızlı bir şekilde gerçekleştirmeyi
 sağlar. Bu fonksiyonlar, temel işlemlerden daha karmaşık işlemlere kadar geniş bir yelpazede kullanılabilir.
+
+### Nesne Tabanlı Programlama
+
+JavaScript, nesne tabanlı programlamayı (Object-Oriented Programming - OOP) destekleyen bir programlama dilidir. Nesne
+tabanlı programlama, programlamayı nesneler ve sınıflar gibi yapılara dayandıran bir paradigmadır. Bu yaklaşım,
+programları daha modüler, esnek ve anlaşılır hale getirir ve büyük projelerin daha kolay yönetilmesini sağlar.
+JavaScript'te nesne tabanlı programlama ile ilgili temel kavramları ve örnekleri inceleyelim:
+
+1. **Nesneler ve Sınıflar:** Nesne tabanlı programlamada, gerçek dünyadaki varlıkları ve kavramları temsil etmek için
+   nesneler ve sınıflar kullanılır. Bir sınıf, belirli bir nesne tipinin özelliklerini ve davranışlarını tanımlayan bir
+   şablondur. Nesneler ise bu sınıflardan türetilen örneklerdir.
+
+2. **Nesnelerin Özellikleri (Properties):** Nesnelerin özellikleri, nesnenin durumunu ve özelliklerini tanımlayan
+   değişkenlerdir. Bu özellikler, sınıfta tanımlanan özelliklere göre değişebilir.
+
+3. **Nesnelerin Davranışları (Methods):** Nesnelerin davranışları, nesnelerin üzerinde gerçekleştirilen işlevleri ifade
+   eden fonksiyonlardır. Bu davranışlar, sınıfta tanımlanan metotlara göre değişebilir.
+
+4. **Kalıtım (Inheritance):** Kalıtım, bir sınıfın başka bir sınıftan özelliklerini ve davranışlarını devralmasıdır. Bu,
+   kod tekrarını azaltır ve sınıflar arasında ilişkiler kurmayı sağlar
+
+5. **Kapsülleme (Encapsulation):** Kapsülleme, nesnelerin özelliklerini ve davranışlarını gizlemeyi ve sadece belirli
+   yöntemlerle erişilebilir hale getirmeyi sağlar. Bu, verilerin ve işlevlerin dış müdahaleye karşı korunmasını sağlar.
+
+6. **Polimorfizm (Polymorphism):** Polimorfizm, aynı isimli metotların farklı sınıflar tarafından farklı şekillerde
+   uygulanmasını ifade eder. Bu, aynı metot adının farklı bağlamlarda kullanılabilmesini sağlar.
+
+Örnek:
+Aşağıda JavaScript'te nesne tabanlı programlamayı basit bir örnekle açıklayalım:
+
+```javascript
+// Sınıf tanımı
+class Araba {
+    constructor(marka, model, yil) {
+        this.marka = marka;
+        this.model = model;
+        this.yil = yil;
+    }
+
+    bilgileriGoster() {
+        console.log("Marka: " + this.marka + ", Model: " + this.model + ", Yıl: " + this.yil);
+    }
+
+    hareketEt() {
+        console.log("Araba hareket ediyor.");
+    }
+}
+
+// SporAraba sınıfı (Araba sınıfından kalıtım)
+class SporAraba extends Araba {
+    constructor(marka, model, yil, maksimumHiz) {
+        super(marka, model, yil);
+        this.maksimumHiz = maksimumHiz;
+    }
+
+    hareketEt() {
+        console.log("Spor araba hızlı bir şekilde hareket ediyor.");
+    }
+
+    drifYap() {
+        console.log("Spor araba drif yapıyor!");
+    }
+}
+
+// SedanAraba sınıfı (Araba sınıfından kalıtım)
+class SedanAraba extends Araba {
+    constructor(marka, model, yil, otomatikVites) {
+        super(marka, model, yil);
+        this.otomatikVites = otomatikVites;
+    }
+
+    hareketEt() {
+        console.log("Sedan araba konforlu bir şekilde hareket ediyor.");
+    }
+
+    bagajAc() {
+        console.log("Sedan araba bagajı açıyor.");
+    }
+}
+
+// Araba nesnesi oluşturma
+let arabam = new Araba("Toyota", "Corolla", 2022);
+arabam.bilgileriGoster(); // Çıktı: Marka: Toyota, Model: Corolla, Yıl: 2022
+arabam.hareketEt(); // Çıktı: Araba hareket ediyor.
+
+// SporAraba nesnesi oluşturma
+let sporAraba = new SporAraba("Ferrari", "458 Italia", 2023, 320);
+sporAraba.bilgileriGoster(); // Çıktı: Marka: Ferrari, Model: 458 Italia, Yıl: 2023
+sporAraba.hareketEt(); // Çıktı: Spor araba hızlı bir şekilde hareket ediyor.
+sporAraba.drifYap(); // Çıktı: Spor araba drif yapıyor!
+
+// SedanAraba nesnesi oluşturma
+let sedanAraba = new SedanAraba("Honda", "Civic", 2022, true);
+sedanAraba.bilgileriGoster(); // Çıktı: Marka: Honda, Model: Civic, Yıl: 2022
+sedanAraba.hareketEt(); // Çıktı: Sedan araba konforlu bir şekilde hareket ediyor.
+sedanAraba.bagajAc(); // Çıktı: Sedan araba bagajı açıyor.
+```
+
+Bu örnekte, "Araba" sınıfı, temel araba özelliklerini ve davranışlarını tanımlar. "SporAraba" ve "SedanAraba"
+sınıfları, "Araba" sınıfından kalıtım alarak kendilerine özgü özellikler ve davranışlar ekler. Bu sayede, farklı araba
+türlerini temsil eden nesneler oluşturabilir ve her bir nesne için özel davranışlar çağırabiliriz. Kalıtım sayesinde kod
+tekrarını önler ve farklı araba türleri arasında benzerlikleri koruruz.

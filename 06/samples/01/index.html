@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 1</title>
+</head>
+<body>
+<script>
+    class Employee {
+        constructor(name) {
+            this.name = name;
+        }
+
+        sayHi() {
+            document.write("Hello " + this.name);
+        }
+    }
+
+    let employee = new Employee("John");
+    employee.sayHi();
+</script>
+</body>
+</html>
