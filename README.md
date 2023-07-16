@@ -15,6 +15,8 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Operatörler](#operatörler)
 * [Koşullu İfadeler](#koşullu-ifadeler)
 * [Döngüler](#döngüler)
+* [Fonksiyonlar](#fonksiyonlar)
+* [Gömülü Fonksiyonlar](#gömülü-fonksiyonlar)
 
 ### JavaScript Nedir
 
@@ -729,3 +731,177 @@ Döngüler, programlamada tekrarlayan işlemleri kolaylaştıran ve kodun daha a
 önemli bir yapıdır. Döngüler sayesinde, verileri listelemek, hesaplamalar yapmak, verileri filtrelemek ve diğer birçok
 işlemi yapmak daha kolay ve etkili hale gelir. Doğru döngü tipini ve koşulları seçmek, verimli ve hatasız kod yazmanızı
 sağlar.
+
+### Fonksiyonlar
+
+JavaScript fonksiyonları, belirli bir görevi yerine getiren ve tekrar tekrar kullanılabilen kod bloklarıdır.
+Fonksiyonlar, kodun yeniden kullanılabilirliğini ve okunabilirliğini artırarak programlamada önemli bir yapıdır.
+Fonksiyonlar, belirli bir işlemi yapmak için bir veya daha fazla parametre alabilir ve bir sonuç döndürebilir.
+JavaScript'te fonksiyonlar şu şekilde tanımlanır:
+
+```javascript
+function functionName(parameter1, parameter2) {
+    // Fonksiyon gövdesi (kod bloğu)
+    // İşlemler ve dönüş değeri (optional)
+}
+```
+
+1. **Fonksiyonun Tanımlanması:** Bir fonksiyon tanımlamak için function anahtar kelimesini kullanırız, ardından
+   fonksiyonun adını belirleriz. Fonksiyon adı, fonksiyonu çağırırken kullanılacak isimdir.
+
+Örnek:
+
+```javascript
+function sayHello() {
+    console.log("Merhaba!");
+}
+```
+
+2. **Fonksiyonun Çağrılması:** Fonksiyonu tanımladıktan sonra, fonksiyonu çağırmak için fonksiyon adını ve parantezleri
+   kullanırız.
+
+Örnek:
+
+```javascript
+sayHello(); // Fonksiyonu çağırır ve "Merhaba!" çıktısını verir.
+```
+
+3. **Parametreler:** Fonksiyonlara verileri aktarmak için parametreler kullanabiliriz. Parametreler, fonksiyonun
+   tanımlandığı yerde belirtilen değişkenlerdir ve fonksiyonun içinde kullanılabilir.
+
+Örnek:
+
+```javascript
+function greet(name) {
+    console.log("Merhaba, " + name + "!");
+}
+
+greet("John"); // Fonksiyonu çağırır ve "Merhaba, John!" çıktısını verir.
+```
+
+4. **Dönüş Değeri:** Fonksiyonlar, işlemler sonucunda bir değer dönebilir. return ifadesiyle belirtilen değer, fonksiyon
+   tarafından çağrıldığında elde edilebilir.
+
+Örnek:
+
+```javascript
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(3, 5); // result değeri 8 olacaktır.
+```
+
+5. **Anonim Fonksiyonlar (Lambda Fonksiyonlar):** Anonim fonksiyonlar, adı olmayan ve genellikle tek bir yerde
+   kullanılan fonksiyonlardır. Bu tür fonksiyonlar genellikle bir değişkene atanır veya bir başka fonksiyon içinde
+   kullanılır.
+
+Örnek:
+
+```javascript
+let multiply = function (a, b) {
+    return a * b;
+};
+
+let result = multiply(2, 4); // result değeri 8 olacaktır.
+```
+
+JavaScript'te fonksiyonlar, kodu daha modüler hale getirir ve aynı işlemi tekrar tekrar yazmak yerine, bir fonksiyon
+kullanarak kolayca çağırabiliriz. Fonksiyonlar, karmaşık işlemleri basit adımlara bölmek ve kodu daha düzenli hale
+getirmek için önemli bir yapıdır.
+
+### Gömülü Fonksiyonlar
+
+JavaScript, dilin temel özelliklerini tamamlayan bir dizi gömülü (built-in) fonksiyonla birlikte gelir. Bu fonksiyonlar,
+yaygın kullanılan işlemleri gerçekleştirmek için hazır olarak sunulur ve özel olarak tanımlamaya gerek duymadan
+kullanılabilirler. Bu gömülü fonksiyonlar, programlama sürecini kolaylaştırır ve daha hızlı ve verimli kod yazmanıza
+yardımcı olur.
+
+1. **console.log():** console.log() fonksiyonu, mesajları tarayıcı konsoluna yazdırmak için kullanılır. Hata ayıklama ve
+   kodu izleme amaçlarıyla sıkça kullanılır.
+
+Örnek:
+
+```javascript
+console.log("Merhaba, dünya!");
+```
+
+2. **alert():** alert() fonksiyonu, tarayıcıda bir bildirim kutusu açarak kullanıcıya bir mesaj göstermek için
+   kullanılır.
+
+Örnek:
+
+```javascript
+alert("Hoş geldiniz!");
+```
+
+3. **prompt():** prompt() fonksiyonu, kullanıcıdan bir girdi almak için kullanılır. Kullanıcı bir metin girer ve girilen
+   değer bir değişkene atanır.
+
+Örnek:
+
+```javascript
+let name = prompt("Adınız nedir?");
+console.log("Merhaba, " + name + "!");
+```
+
+4. **parseInt() ve parseFloat():** parseInt() ve parseFloat() fonksiyonları, bir metni tam sayıya veya ondalıklı sayıya
+   dönüştürmek için kullanılır.
+
+Örnek:
+
+```javascript
+let num1 = parseInt("42"); // Değer 42 (number) olarak dönüştürülür.
+let num2 = parseFloat("3.14"); // Değer 3.14 (number) olarak dönüştürülür.
+```
+
+5. **isNaN():** isNaN() fonksiyonu, bir değerin sayı olup olmadığını kontrol etmek için kullanılır. Eğer değer sayıya
+   dönüştürülemezse veya NaN (Not a Number) ise true değerini döndürür.
+
+Örnek:
+
+```javascript
+let x = "hello";
+console.log(isNaN(x)); // Çıktı: true
+```
+
+6. **String():** String() fonksiyonu, bir değeri metne dönüştürmek için kullanılır.
+
+Örnek:
+
+```javascript
+let number = 42;
+let strNumber = String(number); // Değeri "42" (string) olarak dönüştürür.
+```
+
+7. **Array Methods (Dizi Metodları):** JavaScript, dizilerle çalışmak için bir dizi gömülü metod
+   sunar. ``push()``, ``pop()``, ``shift()``, ``unshift()``, ``slice()``, ``indexOf()`` gibi metodlar, dizilerde ekleme,
+   çıkarma, kesme ve arama işlemleri yapmak için kullanılır.
+
+Örnek:
+
+```javascript
+let colors = ["red", "green", "blue"];
+colors.push("yellow"); // Dizinin sonuna "yellow" elemanını ekler.
+let removedColor = colors.pop(); // Dizinin sonundaki elemanı çıkarır ve removedColor değişkenine atar.
+let firstColor = colors.shift(); // Dizinin başındaki elemanı çıkarır ve firstColor değişkenine atar.
+colors.unshift("orange"); // Dizinin başına "orange" elemanını ekler.
+let slicedColors = colors.slice(1, 3); // Diziyi 1. indeksten 3. indekse kadar keser ve slicedColors değişkenine atar.
+let indexOfBlue = colors.indexOf("blue"); // "blue" elemanının indeksini döndürür.
+```
+
+8. **Math():** Math nesnesi, matematiksel işlemler yapmak için bir dizi gömülü metod ve sabit
+   içerir. ``Math.random()``, ``Math.round()``, ``Math.floor()``, ``Math.ceil()`` gibi metodlar sayesinde rastgele sayı
+   üretimi, yuvarlama ve üst ve alt tamsayıya dönüşüm gibi işlemler gerçekleştirilebilir.
+
+Örnek:
+
+```javascript
+let randomNumber = Math.random(); // 0 ile 1 arasında rastgele bir sayı üretir.
+let roundedNumber = Math.round(3.7); // Değeri 4'e yuvarlar.
+let floorNumber = Math.floor(4.9); // Değeri 4'e yuvarlar (alt tamsayıya dönüşüm).
+let ceilNumber = Math.ceil(2.1); // Değeri 3'e yuvarlar (üst tamsayıya dönüşüm).
+```
+
+Gömülü JavaScript fonksiyonları, programlamayı kolaylaştırır ve çeşitli işlemleri hızlı bir şekilde gerçekleştirmeyi
+sağlar. Bu fonksiyonlar, temel işlemlerden daha karmaşık işlemlere kadar geniş bir yelpazede kullanılabilir.
