@@ -471,3 +471,99 @@ let result = number > booleanValue; // true (boolean) olarak otomatik dönüşü
 Veri tipi dönüşümleri, değişkenlerin farklı veri tipleri arasında uygun şekilde dönüştürülmesini ve işlenmesini sağlar.
 Ancak dönüşümler sırasında dikkatli olunmalıdır, çünkü beklenmedik sonuçlara neden olabilirler. Bu nedenle, dönüşümleri
 açıkça belirtmek veya koşulları iyi düzenlemek önemlidir.
+
+### Operatörler
+
+JavaScript operatörleri, değişkenler ve değerler üzerinde matematiksel, mantıksal ve diğer işlemleri gerçekleştiren
+sembollerdir. Bu operatörler, değişkenleri manipüle etmek, değerleri birbirine eklemek, çıkarmak, karşılaştırmak ve
+kontrol etmek için kullanılır. JavaScript'te birçok farklı türde operatör vardır ve her biri farklı amaçlar için
+kullanılır. İşte JavaScript'te kullanılan temel operatörler:
+
+1. **Aritmetik Operatörler:** Aritmetik operatörler, matematiksel işlemleri gerçekleştirmek için kullanılır. Toplama,
+   çıkarma, çarpma, bölme, mod alma ve üs alma gibi işlemleri yapmak için kullanılabilirler.
+
+* +: Toplama işlemi.
+* -: Çıkarma işlemi.
+* *: Çarpma işlemi.
+* /: Bölme işlemi.
+* %: Mod alma işlemi (kalanı bulmak için).
+* **: Üs alma işlemi (üs operatörü).
+
+Örnek:
+
+```javascript
+let x = 10;
+let y = 5;
+
+let sum = x + y; // 15
+let difference = x - y; // 5
+let product = x * y; // 50
+let quotient = x / y; // 2
+let remainder = x % y; // 0
+let power = x ** y; // 100000
+```
+
+2. **Atama Operatörleri:** Atama operatörleri, değişkenlere değer atamak için kullanılır. Değişkenin değerini
+   güncellemek veya başka bir değişkenin değerini atamak için kullanılabilirler.
+
+* =: Değer atama işlemi.
+* +=: Değişkenin mevcut değerine başka bir değeri ekler.
+* -=: Değişkenin mevcut değerinden başka bir değeri çıkarır.
+* *=: Değişkenin mevcut değerine başka bir değeri çarpar.
+* /=: Değişkenin mevcut değerini başka bir değere böler.
+
+Örnek:
+
+```javascript
+let a = 5;
+a += 3; // a'nın değeri 8 olur
+a -= 2; // a'nın değeri 6 olur
+a *= 4; // a'nın değeri 24 olur
+a /= 3; // a'nın değeri 8 olur
+```
+
+3. **Karşılaştırma Operatörleri:** Karşılaştırma operatörleri, değişkenlerin veya değerlerin ilişkisini kontrol etmek
+   için kullanılır. Sonuçları true veya false olarak döndürürler.
+
+* ==: Eşit mi? (Değerleri karşılaştırır.)
+* !=: Eşit değil mi?
+* ===: Tam eşit mi? (Değerleri ve türleri karşılaştırır.)
+* !==: Tam eşit değil mi?
+* > : Büyük mü?
+* <: Küçük mü?
+* > =: Büyük veya eşit mi?
+* <=: Küçük veya eşit mi?
+
+Örnek:
+
+```javascript
+let x = 5;
+let y = 10;
+
+console.log(x == y); // false
+console.log(x === "5"); // false
+console.log(x < y); // true
+console.log(x >= 5); // true
+```
+
+4. **Mantıksal Operatörler:** Mantıksal operatörler, mantıksal ifadeleri değerlendirmek için kullanılır. Genellikle true
+   veya false değerleriyle sonuçlanırlar ve koşullu ifadelerde kullanılırlar.
+
+* &&: Ve (AND) operatörü.
+* ||: Veya (OR) operatörü.
+* !: Değil (NOT) operatörü.
+
+Örnek:
+
+```javascript
+let a = true;
+let b = false;
+
+console.log(a && b); // false
+console.log(a || b); // true
+console.log(!a); // false
+```
+
+JavaScript operatörleri, programlarda verileri işlemek ve kontrol etmek için önemli araçlardır. Doğru operatörleri
+kullanarak, kodunuzun daha etkili ve verimli olmasını sağlayabilirsiniz. Operatörlerin öncelik sırası ve etkileşimleri
+konusunda dikkatli olmak, doğru sonuçlar almanızı sağlar.

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 1</title>
+</head>
+<body>
+<script>
+    let number;
+    const question = "What is your favorite number?";
+    const incrementAnswer = "Favorite number incremented by 1 is: ";
+    const decrementAnswer = "Favorite number decremented by 1 is: ";
+
+    number = prompt(question);
+    number = parseInt(number); // convert string to number
+
+    let incrementResult = ++number;
+    let decrementResult = --number;
+
+    document.write("<p>" + incrementAnswer + incrementResult + "</p>");
+    document.write("<p>" + decrementAnswer + decrementResult + "</p>");
+</script>
+</body>
+</html>
