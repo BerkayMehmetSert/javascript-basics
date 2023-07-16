@@ -12,6 +12,8 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Veri Okuma ve Yazma](#veri-okuma-ve-yazma)
 * [Veri Türleri](#veri-tipleri)
 * [Veri Tipi Dönüşümleri](#veri-tipi-dönüşümleri)
+* [Operatörler](#operatörler)
+* [Koşullu İfadeler](#koşullu-ifadeler)
 
 ### JavaScript Nedir
 
@@ -567,3 +569,84 @@ console.log(!a); // false
 JavaScript operatörleri, programlarda verileri işlemek ve kontrol etmek için önemli araçlardır. Doğru operatörleri
 kullanarak, kodunuzun daha etkili ve verimli olmasını sağlayabilirsiniz. Operatörlerin öncelik sırası ve etkileşimleri
 konusunda dikkatli olmak, doğru sonuçlar almanızı sağlar.
+
+### Koşullu İfadeler
+
+Koşullu ifadeler, programların farklı durumlara göre farklı kod bloklarını çalıştırmalarını sağlayan önemli bir yapıdır.
+JavaScript'te koşullu ifadeler, if, else if, else ve switch gibi yapılar kullanılarak gerçekleştirilir. Bu ifadeler,
+belirli bir koşulun doğru veya yanlış olduğunu kontrol eder ve buna göre uygun kod bloklarını çalıştırır. Koşullu
+ifadeler, programın daha dinamik ve esnek olmasını sağlar. İşte JavaScript'te kullanılan temel koşullu ifadeler:
+
+1. **if İfadesi:** `if` ifadesi, belirtilen koşulun doğru olduğu durumlarda belirli bir kod bloğunun çalıştırılmasını
+   sağlar.
+
+Örnek:
+
+```javascript
+let hour = 15;
+
+if (hour < 12) {
+    console.log("Günaydın!");
+}
+```
+
+2. **else İfadesi:** `else if` ifadesi, bir koşulun doğru olmadığı durumlarda farklı bir koşulu kontrol etmek ve uygun
+   kod bloğunu çalıştırmak için kullanılır.
+
+Örnek:
+
+```javascript
+let hour = 15;
+
+if (hour < 12) {
+    console.log("Günaydın!");
+} else if (hour < 18) {
+    console.log("İyi günler!");
+}
+```
+
+3. **else İfadesi:** `else` ifadesi, tüm önceki koşulların doğru olmadığı durumlarda çalışacak bir varsayılan kod
+   bloğunu tanımlamak için kullanılır.
+
+Örnek:
+
+```javascript
+let hour = 20;
+
+if (hour < 12) {
+    console.log("Günaydın!");
+} else if (hour < 18) {
+    console.log("İyi günler!");
+} else {
+    console.log("İyi akşamlar!");
+}
+```
+
+4. **switch İfadesi:** `switch` ifadesi, birden çok durum arasında seçim yapmak için kullanılır. Bu ifade, belirtilen
+   değişkenin değerine göre farklı durumları kontrol eder ve eşleşen durumun kod bloğunu çalıştırır.
+
+Örnek:
+
+```javascript
+let day = 2;
+let dayName;
+
+switch (day) {
+    case 1:
+        dayName = "Pazartesi";
+        break;
+    case 2:
+        dayName = "Salı";
+        break;
+    case 3:
+        dayName = "Çarşamba";
+        break;
+    default:
+        dayName = "Bilinmeyen Gün";
+}
+console.log("Bugün " + dayName);
+```
+
+Koşullu ifadeler, programın belirli koşullara göre akışını kontrol etmek ve farklı senaryolara uygun tepkiler vermek
+için kullanılır. Programların daha esnek ve karmaşık işlevselliğe sahip olmasını sağlarlar. Doğru koşullu ifadeler
+kullanarak, kodunuzun daha okunabilir ve anlaşılabilir olmasını sağlayabilirsiniz.

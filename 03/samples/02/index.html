@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 2</title>
+</head>
+<body>
+<script>
+    let radius, area, circumference;
+    const PI = 3.14159;
+    const question = "What is the radius of the circle?";
+    const error = "The radius must be a positive number.";
+    const answerArea = "The area of the circle is ";
+    const answerCircumference = "The circumference of the circle is ";
+
+    radius = prompt(question);
+    radius = parseFloat(radius); // convert string to number
+
+    if (radius < 0) {
+        alert(error);
+    } else {
+        area = PI * radius * radius;
+        circumference = 2 * PI * radius;
+        document.write("<p>" + answerArea + area + "</p>");
+        document.write("<p>" + answerCircumference + circumference + "</p>");
+    }
+</script>
+</body>
+</html>

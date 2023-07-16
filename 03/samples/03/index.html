@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 3</title>
+</head>
+<body>
+<script>
+    let number1, number2;
+    const question = "What is the number?";
+
+    number1 = prompt(question);
+    number1 = parseFloat(number1); // convert string to number
+    number2 = prompt(question);
+    number2 = parseFloat(number2); // convert string to number
+
+    if (number1 < number2) {
+        document.write("<p>" + number1 + " is less than " + number2 + "</p>");
+    } else if (number1 > number2) {
+        document.write("<p>" + number1 + " is greater than " + number2 + "</p>");
+    } else {
+        document.write("<p>" + number1 + " is equal to " + number2 + "</p>");
+    }
+</script>
+</body>
+</html>

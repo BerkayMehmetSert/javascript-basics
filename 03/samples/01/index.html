@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 1</title>
+</head>
+<body>
+<script>
+    let number, square;
+    const question = "Enter a number and I will square it for you.";
+    const error = "You did not positive a number.";
+    const result = "The square of your number is ";
+
+    number = prompt(question);
+    number = parseFloat(number); // convert string to number
+
+    if (number >= 0) {
+        square = number * number;
+        document.write("<p>" + result + square + "</p>");
+    } else {
+        alert(error);
+    }
+</script>
+</body>
+</html>
