@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 2</title>
+</head>
+<body>
+<script>
+    let number;
+    const question = "What is your favorite number?";
+    const answer = "Your favorite number squared is: ";
+    number = prompt(question);
+    number = parseInt(number); // Convert string to number
+    let result = answer + number * number; // Calculate result
+    document.write("<h1>" + result + "</h1>");
+</script>
+</body>
+</html>

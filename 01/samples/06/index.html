@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 6</title>
+</head>
+<body>
+<script>
+    let radius, area, circumference;
+    const areaAnswer = "The area of the circle is: "
+    const circumferenceAnswer = "The circumference of the circle is: "
+    const PI = 3.14;
+
+    radius = prompt("Enter the radius of the circle:");
+    radius = parseFloat(radius); // convert to number
+    area = PI * radius * radius;
+    circumference = 2 * PI * radius;
+    let areaResult = areaAnswer + area;
+    let circumferenceResult = circumferenceAnswer + circumference;
+
+    document.write("<h1>Circle Properties</h1>");
+    document.write("<p>Radius = " + radius + "</p>");
+    document.write("<p>" + areaResult + "</p>");
+    document.write("<p>" + circumferenceResult + "</p>");
+</script>
+</body>
+</html>

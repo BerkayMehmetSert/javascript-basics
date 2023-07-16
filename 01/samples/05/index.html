@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 5</title>
+</head>
+<body>
+<script>
+    let width, height, area, perimeter;
+    const areaAnswer = "The area of the rectangle is: "
+    const perimeterAnswer = "The perimeter of the rectangle is: "
+
+    width = prompt("Enter the width of the rectangle:");
+    width = parseFloat(width); // convert to number
+    height = prompt("Enter the height of the rectangle:");
+    height = parseFloat(height); // convert to number
+    area = width * height;
+    perimeter = 2 * (width + height);
+    let areaResult = areaAnswer + area;
+    let perimeterResult = perimeterAnswer + perimeter;
+
+    document.write("<h1>Rectangle Properties</h1>");
+    document.write("<p>Width = " + width + "</p>");
+    document.write("<p>Height = " + height + "</p>");
+    document.write("<p>" + areaResult + "</p>");
+    document.write("<p>" + perimeterResult + "</p>");
+</script>
+</body>
+</html>

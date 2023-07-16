@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 4</title>
+</head>
+<body>
+<script>
+    let number1, number2, number3;
+    const question = "Enter a number: ";
+    const answer = "The average of ";
+    number1 = prompt(question);
+    number1 = parseFloat(number1); // convert string to number
+    number2 = prompt(question);
+    number2 = parseFloat(number2); // convert string to number
+    number3 = prompt(question);
+    number3 = parseFloat(number3); // convert string to number
+    let result = answer + (number1 + number2 + number3) / 3;
+    document.write("<h1>" + result + "</h1>");
+</script>
+</body>
+</html>

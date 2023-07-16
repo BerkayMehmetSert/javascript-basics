@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 3</title>
+</head>
+<body>
+<script>
+    let number1, number2;
+    const question = "What is your favorite number?";
+    const answer = "The sum of your favorite numbers is: ";
+    number1 = prompt(question);
+    number1 = parseInt(number1); // Convert string to number
+    number2 = prompt(question);
+    number2 = parseInt(number2); // Convert string to number
+    let result = answer + (number1 + number2); // Calculate result
+    document.write("<h1>" + result + "</h1>");
+</script>
+</body>
+</html>
