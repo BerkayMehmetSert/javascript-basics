@@ -18,6 +18,7 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Fonksiyonlar](#fonksiyonlar)
 * [Gömülü Fonksiyonlar](#gömülü-fonksiyonlar)
 * [Nesne Tabanlı Programlama](#nesne-tabanlı-programlama)
+* [Diziler](#diziler)
 
 ### JavaScript Nedir
 
@@ -1008,3 +1009,101 @@ Bu örnekte, "Araba" sınıfı, temel araba özelliklerini ve davranışlarını
 sınıfları, "Araba" sınıfından kalıtım alarak kendilerine özgü özellikler ve davranışlar ekler. Bu sayede, farklı araba
 türlerini temsil eden nesneler oluşturabilir ve her bir nesne için özel davranışlar çağırabiliriz. Kalıtım sayesinde kod
 tekrarını önler ve farklı araba türleri arasında benzerlikleri koruruz.
+
+### Diziler
+
+Diziler, JavaScript'te birden fazla değeri saklamak için kullanılan veri yapılarıdır. Diziler, aynı türdeki veya farklı
+türdeki verileri bir arada tutabilir ve bu verilere indeks numaraları ile erişim sağlar. JavaScript dizileri, dinamik
+boyutlara sahiptir, yani boyutlarını başlangıçta belirtmek zorunda değilsiniz. Diziler, programlama sürecinde verileri
+düzenlemek, depolamak ve yönetmek için yaygın olarak kullanılır.
+
+1. **Dizi Oluşturma:** Diziler, köşeli parantezler [] içine verileri virgülle ayırarak oluşturulur. Boş bir dizi
+   oluşturmak için [] kullanabilir veya başlangıçta elemanlarla doldurabilirsiniz.
+
+Örnek:
+
+```javascript
+let emptyArray = []; // Boş bir dizi oluşturma
+let numbers = [1, 2, 3, 4, 5]; // Elemanlarla dolu bir dizi oluşturma
+let fruits = ["apple", "banana", "orange"]; // Dizi içinde metinsel değerler
+```
+
+2. **Dizi Elemanlarına Erişim:** Dizi elemanlarına indeks numaraları ile erişebiliriz. İndeks numaraları 0'dan başlar ve
+   dizinin uzunluğu - 1 kadar olur.
+
+Örnek:
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+console.log(numbers[0]); // Çıktı: 1
+console.log(numbers[3]); // Çıktı: 4
+```
+
+3. **Dizi Uzunluğu:** Dizinin eleman sayısını öğrenmek için length özelliğini kullanabiliriz.
+
+Örnek:
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+console.log(fruits.length); // Çıktı: 3
+```
+
+4. **Dizi Elemanlarını Değiştirme:** Dizi elemanlarını belirli bir indekste değiştirmek için atama yapabiliriz.
+
+Örnek:
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+numbers[2] = 10; // 3. elemanı 10 ile değiştirir
+console.log(numbers); // Çıktı: [1, 2, 10, 4, 5]
+```
+
+5. **Diziye Eleman Ekleme ve Silme:**
+
+* ``push()``: Dizinin sonuna yeni bir eleman ekler.
+* ``pop()``: Dizinin sonundaki elemanı çıkarır.
+* ``unshift()``: Dizinin başına yeni bir eleman ekler.
+* ``shift()``: Dizinin başındaki elemanı çıkarır.
+
+Örnek:
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+fruits.push("grape"); // Dizinin sonuna "grape" elemanını ekler
+fruits.pop(); // Dizinin sonundaki "grape" elemanını çıkarır
+fruits.unshift("pear"); // Dizinin başına "pear" elemanını ekler
+fruits.shift(); // Dizinin başındaki "pear" elemanını çıkarır
+```
+
+6. **Dizi Metotları:** JavaScript dizileri için bir dizi metotu bulunur. Bu metotlar dizi üzerinde çeşitli işlemleri
+   yapmaya yardımcı olur. Örneğin, concat(), slice(), join(), sort(), reverse(), map() gibi metotlar dizi üzerinde
+   işlemler yapar ve yeni diziler oluşturur.
+
+Örnek:
+
+```javascript
+let numbers = [3, 1, 5, 2, 4];
+let sortedNumbers = numbers.sort(); // Diziyi sıralar: [1, 2, 3, 4, 5]
+let slicedNumbers = numbers.slice(1, 3); // Diziyi keser: [2, 3]
+let joinedNumbers = numbers.join("-"); // Diziyi birleştirir: "1-2-3-4-5"
+```
+
+7. **Dizi Döngüleri:** Dizileri elemanlar üzerinde döngü ile işlemek için for, forEach(), map() gibi döngü yapıları
+   kullanılabilir.
+
+Örnek:
+
+```javascript
+let fruits = ["apple", "banana", "orange"];
+for (let i = 0; i < fruits.length; i++) {
+    console.log(fruits[i]);
+}
+
+fruits.forEach(function (fruit) {
+    console.log(fruit);
+});
+
+let upperCaseFruits = fruits.map(function (fruit) {
+    return fruit.toUpperCase();
+});
+```

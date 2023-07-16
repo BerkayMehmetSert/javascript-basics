@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 1</title>
+</head>
+<body>
+<script>
+    let arrays = new Array(5);
+    let sum = 0;
+
+    for (let i = 0; i < arrays.length; i++) {
+        arrays[i] = prompt("Enter a number");
+    }
+
+    for (let i = 0; i < arrays.length; i++) {
+        sum += parseInt(arrays[i]);
+    }
+
+    document.write("The sum is " + sum);
+</script>
+</body>
+</html>
