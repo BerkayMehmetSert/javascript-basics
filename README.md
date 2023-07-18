@@ -61,8 +61,6 @@ genişlemektedi
 
 ---
 
----
-
 ### JavaScript Yazım Kuralları
 
 JavaScript yazım ve noktala kuralları, programlarınızın düzgün çalışması ve anlaşılabilir olması için oldukça önemlidir.
@@ -1763,7 +1761,6 @@ Hata yönetimi, JavaScript uygulamalarının sağlamlığını ve kullanıcı de
 kullanıcıya uygun şekilde sunulması, kullanıcının uygulama ile ilgili geribildirim almasına yardımcı olur. Bu nedenle,
 JavaScript kodu yazarken ve hata yönetimiyle ilgili olarak uygun try-catch blokları ve Error nesneleri kullanmak
 önemlidir.
----
 
 ---
 
