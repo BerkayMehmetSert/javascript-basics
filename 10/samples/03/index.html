@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 3</title>
+</head>
+<body>
+<form name="form">
+    <label for="num1">Number 1:</label><input type="text" id="num1" name="num1"><br>
+    <label for="num2">Number 2:</label><input type="text" id="num2" name="num2"><br>
+    <input type="button" value="Calculate" onclick="calculate()">
+</form>
+<p id="average"></p>
+<p id="sum"></p>
+<script>
+    function calculate() {
+        let num1 = document.getElementById("num1").value;
+        if (num1 <= 0) {
+            alert("Please enter a number greater than 0");
+            return;
+        }
+
+        let num2 = document.getElementById("num2").value;
+        if (num2 <= 0) {
+            alert("Please enter a number greater than 0");
+            return;
+        }
+
+        let sum = parseInt(num1) + parseInt(num2); // parseInt() converts a string to an integer
+        let average = sum / 2;
+        document.getElementById("average").innerHTML = "Average: " + average;
+        document.getElementById("sum").innerHTML = "Sum: " + sum;
+    }
+</script>
+</body>
+</html>
