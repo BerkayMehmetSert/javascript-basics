@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Sample 9</title>
+</head>
+<body>
+<input type="button" value="Get Navigator Info" onclick="getNavigatorInfo()">
+<script>
+    function getNavigatorInfo() {
+        document.write("Navigator Name: " + navigator.appName + "<br>");
+        document.write("Navigator App Version: " + navigator.appVersion + "<br>");
+        document.write("Navigator User Agent: " + navigator.userAgent + "<br>");
+        document.write("Navigator Platform: " + navigator.platform + "<br>");
+        document.write("Navigator Language: " + navigator.language + "<br>");
+        document.write("Navigator Online: " + navigator.onLine + "<br>");
+        document.write("Navigator Java Enabled: " + navigator.javaEnabled() + "<br>");
+        document.write("Navigator Cookie Enabled: " + navigator.cookieEnabled + "<br>");
+    }
+</script>
+</body>
+</html>

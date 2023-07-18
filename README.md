@@ -19,6 +19,12 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Gömülü Fonksiyonlar](#gömülü-fonksiyonlar)
 * [Nesne Tabanlı Programlama](#nesne-tabanlı-programlama)
 * [Diziler](#diziler)
+* [DOM Nedir](#dom-nedir)
+* [HTML Olayları Nedir](#html-olayları-nedir)
+* [Window Nesnesi Nedir](#window-nesnesi-nedir)
+* [Navigator Nesnesi Nedir](#navigator-nesnesi-nedir)
+* [Screen Nesnesi Nedir](#screen-nesnesi-nedir)
+* [Location Nesnesi Nedir](#location-nesnesi-nedir)
 
 ### JavaScript Nedir
 
@@ -1107,3 +1113,466 @@ let upperCaseFruits = fruits.map(function (fruit) {
     return fruit.toUpperCase();
 });
 ```
+
+### DOM Nedir
+
+JavaScript, web sayfalarının içeriği ve yapısını programlı bir şekilde değiştirmek ve etkileşim sağlamak için kullanılan
+güçlü bir araç olan DOM (Document Object Model) ile entegre çalışır. DOM, HTML ve XML belgelerini bir nesne koleksiyonu
+olarak temsil eden bir yapıdır. Web tarayıcıları, bir web sayfasını yüklediğinizde, bu sayfanın içeriğini DOM ağacı
+olarak oluşturur ve JavaScript, bu ağaç üzerinde işlem yapabilir.
+
+DOM, web sayfasının her bir öğesini (element) bir nesne olarak temsil eder ve bu öğelere erişerek içeriklerini
+değiştirebilir veya özelliklerini kontrol edebiliriz. DOM, web sayfalarında gezinme, içerik ekleyip çıkarma, stil
+değişiklikleri yapma, etkileşimli olaylar eklemek gibi birçok işlemi mümkün kılar.
+
+Örnek bir DOM ağacı şu şekildedir:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Örnek</title>
+</head>
+<body>
+<div id="main-container">
+    <h1>Merhaba, DOM!</h1>
+    <p>Bu bir örnek paragraf.</p>
+    <ul>
+        <li>Öğe 1</li>
+        <li>Öğe 2</li>
+        <li>Öğe 3</li>
+    </ul>
+</div>
+</body>
+</html>
+```
+
+**DOM ile Yapılabilecekler:**
+
+1. **Element Seçme ve Manipülasyon:** DOM ile HTML öğelerini seçebilir, içeriklerini değiştirebilir, özelliklerini
+   kontrol edebilir veya yeni öğeler oluşturabiliriz.
+
+Örnek:
+
+```javascript
+let heading = document.querySelector("h1");
+heading.textContent = "Merhaba, DOM Değişti!";
+
+let paragraph = document.createElement("p");
+paragraph.textContent = "Bu da yeni bir paragraf.";
+document.body.appendChild(paragraph);
+```
+
+2. **Stil Değişiklikleri:** DOM ile CSS özelliklerini değiştirebilir ve sayfanın görünümünü güncelleyebiliriz.
+
+Örnek:
+
+```javascript
+let element = document.querySelector("#main-container");
+element.style.backgroundColor = "lightblue";
+element.style.fontSize = "20px";
+```
+
+3. **Olaylar ve Etkileşim:** DOM ile olay dinleyiciler ekleyerek sayfadaki etkileşimleri takip edebiliriz.
+
+Örnek:
+
+```javascript
+let button = document.querySelector("#my-button");
+button.addEventListener("click", function () {
+    alert("Butona tıklandı!");
+});
+```
+
+4. **DOM Gezinme:** DOM ağacında gezinerek belirli öğeleri bulabilir ve onlar üzerinde işlemler yapabiliriz.
+
+Örnek:
+
+```javascript
+let listItems = document.querySelectorAll("li");
+listItems.forEach(function (item) {
+    item.style.color = "red";
+});
+```
+
+DOM, web sayfalarını etkileşimli ve dinamik hale getirmek için önemli bir araçtır. JavaScript kullanarak DOM'u anlamak
+ve etkin bir şekilde kullanmak, web geliştirme sürecinde çok değerli bir yetenektir.
+
+### HTML Olayları Nedir
+
+HTML olayları, web sayfalarında kullanıcı etkileşimlerini ve diğer olayları (örneğin, yükleme, fare tıklaması, klavye
+tuşlarına basma vb.) yakalayan ve işleyen JavaScript kodlarıdır. Olaylar, kullanıcıların web sayfalarında etkileşime
+girmesini sağlar ve web sayfasının dinamik ve etkileşimli olmasını mümkün kılar. JavaScript, HTML içinde tanımlanan
+olaylara tepki vererek belirli işlemleri gerçekleştirir.
+
+HTML Olayları Kullanımı:
+
+1. **Olay İşleyici Ekleme:** HTML elementlerine olayları işleyecek JavaScript fonksiyonlarını eklemek için HTML
+   etiketlerinde on önekini kullanırız. Örneğin, bir düğmeye tıklandığında bir işlev çağırmak için onclick
+   kullanabiliriz.
+
+Örnek:
+
+```html
+
+<button onclick="myFunction()">Tıkla</button>
+```
+
+2. **Olay İşleyici Fonksiyonu Tanımlama:** JavaScript kodunda olay işleyici fonksiyonlarını tanımlayarak, olayı daha
+   esnek bir şekilde işleyebiliriz.
+
+Örnek:
+
+```html
+
+<button id="myButton">Tıkla</button>
+<script>
+    function myFunction() {
+        alert("Düğmeye tıklandı!");
+    }
+
+    document.getElementById("myButton").onclick = myFunction;
+</script>
+```
+
+3. **addEventListener() Metodu:** addEventListener() metodu, bir elemente olay dinleyicisi eklemek için kullanılır ve
+   daha esnek bir yöntem sağlar.
+
+Örnek:
+
+```html
+
+<button id="myButton">Tıkla</button>
+<script>
+    document.getElementById("myButton").addEventListener("click", function () {
+        alert("Düğmeye tıklandı!");
+    });
+</script>
+```
+
+4. **Olay Nesnesi:** Olay işleyicileri, olayın detaylarını içeren bir olay nesnesi ile birlikte çalışır. Bu nesne,
+   olayla ilgili bilgilere erişmemizi sağlar.
+
+Örnek:
+
+```html
+
+<button id="myButton">Tıkla</button>
+<script>
+    document.getElementById("myButton").addEventListener("click", function (event) {
+        alert("Tıklanan düğme: " + event.target.id);
+    });
+</script>
+```
+
+5. **Olaylar ve Formlar:** Formlar, kullanıcı verilerini toplamak için önemli bir HTML elementidir. Olay işleyicileri
+   ile formlarda verileri doğrulayabilir ve gönderebiliriz.
+
+Örnek:
+
+```html
+
+<form id="myForm">
+    <input type="text" name="username" required>
+    <input type="submit" value="Gönder">
+</form>
+<script>
+    document.getElementById("myForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Formun varsayılan davranışını engeller (sayfa yenileme)
+        let username = event.target.username.value;
+        alert("Merhaba, " + username + "!");
+    });
+</script>
+```
+
+JavaScript ile HTML olayları kullanarak, web sayfalarında kullanıcı etkileşimlerini yakalayabilir ve kullanıcılara daha
+iyi bir deneyim sunabiliriz. Olayları yakalamak ve işlemek, web sayfalarını dinamik, etkileşimli ve verimli hale
+getirmede önemli bir rol oynar.
+
+### Window Nesnesi Nedir
+
+Window nesnesi, JavaScript içinde en üst düzeyde bulunan ve tarayıcı penceresini temsil eden global bir nesnedir.
+Tarayıcı ortamında çalıştırılan JavaScript, window nesnesine erişim sağlar ve bu nesne sayesinde tarayıcı penceresine
+yönelik çeşitli işlemler gerçekleştirebilir. Window nesnesi, tarayıcıda açılan her yeni sekme veya pencere için ayrı bir
+nesneyi temsil eder ve tüm tarayıcı işlemlerine erişim imkanı sağlar.
+
+Window Nesnesinin Özellikleri ve Metotları:
+
+1. **document:** Window nesnesinin en önemli özelliklerinden biri document özelliğidir. Bu özellik, tarayıcı
+   penceresinin içeriğini temsil eden Document nesnesine erişim sağlar.
+
+Örnek:
+
+```javascript
+console.log(window.document); // Tarayıcı penceresinin Document nesnesi
+```
+
+2. **open() ve close() Metotları:** Window nesnesi, open() ve close() metotları ile yeni tarayıcı pencereleri açabilir
+   ve mevcut pencereleri kapatabilir.
+
+Örnek:
+
+```javascript
+let yeniPencere = window.open("https://www.example.com", "_blank");
+yeniPencere.close(); // Yeni pencereyi kapatır
+```
+
+3. **setTimeout() ve setInterval() Metotları:** Window nesnesi, belirli bir süre sonra bir işlem yapmak veya belirli
+   aralıklarla bir işlemi tekrarlamak için setTimeout() ve setInterval() metotlarını kullanır.
+
+Örnek:
+
+```javascript
+function mesajGoster() {
+    console.log("Merhaba, dünya!");
+}
+
+setTimeout(mesajGoster, 3000); // 3 saniye sonra "Merhaba, dünya!" mesajını gösterir
+setInterval(mesajGoster, 2000); // 2 saniyede bir "Merhaba, dünya!" mesajını gösterir
+```
+
+4. **location Özelliği:** Window nesnesinin location özelliği, tarayıcı penceresinin URL'sini temsil eder ve sayfayı
+   yönlendirmek için kullanılır.
+
+Örnek:
+
+```javascript
+console.log(window.location.href); // Mevcut sayfanın URL'sini alır
+window.location.href = "https://www.example.com"; // Yeni bir sayfaya yönlendirir
+```
+
+5. **alert(), confirm() ve prompt() Metotları:** Window nesnesi, alert(), confirm() ve prompt() metotları ile
+   kullanıcıya mesajlar gösterip, onlardan veri alabilir.
+
+Örnek:
+
+```javascript
+alert("Bu bir uyarı mesajıdır.");
+let onay = confirm("Emin misiniz?");
+let isim = prompt("Adınız nedir?", "John Doe");
+```
+
+6. **resizeTo() ve moveTo() Metotları:** Window nesnesi, resizeTo() ve moveTo() metotları ile tarayıcı penceresinin
+   boyutunu ve konumunu değiştirebilir.
+
+Örnek:
+
+```javascript
+window.resizeTo(800, 600); // Pencere boyutunu 800x600 piksele ayarlar
+window.moveTo(100, 100); // Pencereyi (100, 100) konumuna taşır
+```
+
+Window nesnesi, JavaScript'te tarayıcıyla etkileşim sağlamak için çok önemli bir rol oynar. Sayfa yönlendirme, yeni
+pencereler açma, zamanlayıcılar oluşturma, kullanıcı etkileşimleri yönetme ve tarayıcı özelliklerine erişim gibi birçok
+işlemi yönetmemizi sağlar. Tarayıcı tabanlı JavaScript uygulamaları geliştirirken window nesnesini doğru bir şekilde
+kullanmak, web sayfalarını daha etkileşimli ve kullanıcı dostu hale getirmemize yardımcı olur.
+
+### Navigator Nesnesi Nedir
+
+Navigator nesnesi, JavaScript içinde bulunan ve tarayıcı hakkında bilgi sağlayan global bir nesnedir. Bu nesne, tarayıcı
+ile ilgili bilgileri ve kullanıcı cihazıyla ilgili bazı özellikleri içerir. Tarayıcıda çalışan JavaScript kodları,
+navigator nesnesine erişerek, kullanıcının cihazı, tarayıcısı ve kullanılabilir özellikler hakkında bilgi alabilir.
+
+Navigator Nesnesinin Bazı Özellikleri:
+
+1. **appName:** Tarayıcının adını alır. Genellikle "Netscape" veya "Microsoft Internet Explorer" gibi değerlere
+   sahiptir.
+
+Örnek:
+
+```javascript
+console.log(navigator.appName); // Tarayıcının adını yazdırır
+```
+
+2. **appVersion:** Tarayıcının sürüm bilgisini alır.
+
+Örnek:
+
+```javascript
+console.log(navigator.appVersion); // Tarayıcının sürüm bilgisini yazdırır
+```
+
+3. **userAgent:** Tarayıcının kullanıcı ajanını alır. Tarayıcının ve işletim sisteminin bilgisini içerir.
+
+Örnek:
+
+```javascript
+console.log(navigator.userAgent); // Kullanıcı ajanını yazdırır
+```
+
+4. **platform:** Kullanıcının işletim sistemini alır. Örneğin, "Win32", "MacIntel", "iPhone", "Android" gibi değerler
+   olabilir.
+
+Örnek:
+
+```javascript
+console.log(navigator.platform); // İşletim sistemini yazdırır
+```
+
+5. **language ve languages:** Kullanıcının tercih ettiği dil bilgisini alır. language özelliği tek bir dil kodunu,
+   languages özelliği ise tarayıcının desteklediği tüm dilleri dizi olarak verir.
+
+Örnek:
+
+```javascript
+console.log(navigator.language); // Kullanıcının tercih ettiği dil kodunu yazdırır
+console.log(navigator.languages); // Tarayıcının desteklediği tüm dilleri yazdırır
+```
+
+6. **cookieEnabled:** Kullanıcının tarayıcısında çerezlerin etkin olup olmadığını belirten bir boolean değer alır.
+
+Örnek:
+
+```javascript
+console.log(navigator.cookieEnabled); // Çerezlerin etkin olup olmadığını yazdırır
+```
+
+Navigator nesnesi, JavaScript içinde tarayıcı hakkında bilgi edinmenin ve bazı tarayıcı özelliklerine erişmenin kolay
+bir yoludur. Bu bilgiler, web sitelerinin ziyaretçilere uygun içerik sunmasını, kullanıcı deneyimini geliştirmesini ve
+tarayıcı uyumluluğunu sağlamasını kolaylaştırır. Ancak, kullanıcı ajanı gibi bilgilerin güvenilirliği, tarayıcı
+tarafından değiştirilebileceği için dikkatli bir şekilde kullanılmalıdır.
+
+### Screen Nesnesi Nedir
+
+Screen nesnesi, JavaScript içinde bulunan ve kullanıcının ekranı hakkında bilgi sağlayan global bir nesnedir. Bu nesne,
+kullanıcının ekranı ile ilgili özellikleri içerir ve kullanıcı ekranının boyutları, piksel yoğunluğu gibi bilgileri
+almak için kullanılır. Screen nesnesi, web sayfalarını daha iyi bir şekilde düzenlemek ve kullanıcı cihazına uygun
+içerik sunmak için önemli bir araçtır.
+
+Screen Nesnesinin Bazı Özellikleri:
+
+1. **width ve height:** Ekranın genişliğini ve yüksekliğini piksel cinsinden alır.
+
+Örnek:
+
+```javascript
+console.log(screen.width); // Ekranın genişliğini yazdırır
+console.log(screen.height); // Ekranın yüksekliğini yazdırır
+```
+
+2. **availWidth ve availHeight:** Kullanılabilir ekran alanının genişliğini ve yüksekliğini piksel cinsinden alır.
+   Taskbar ve diğer arayüz öğeleri tarafından işgal edilmemiş alanı ifade eder.
+
+Örnek:
+
+```javascript
+console.log(screen.availWidth); // Kullanılabilir ekran alanının genişliğini yazdırır
+console.log(screen.availHeight); // Kullanılabilir ekran alanının yüksekliğini yazdırır
+```
+
+3. **colorDepth:** Ekranın renk derinliğini (bir pikselde kaç bit rengin depolandığını) alır.
+
+Örnek:
+
+```javascript
+console.log(screen.colorDepth); // Ekranın renk derinliğini yazdırır
+```
+
+4. **pixelDepth:** Ekranın piksel derinliğini (bir pikselde kaç bitin kullanıldığını) alır. colorDepth ile aynı değeri
+   verir.
+
+Örnek:
+
+```javascript
+console.log(screen.pixelDepth); // Ekranın piksel derinliğini yazdırır
+```
+
+5. **orientation:** Kullanıcının cihazının ekran yönlendirmesini belirten bir nesne alır. Bu özellik, mobil cihazlarda
+   yararlıdır.
+
+Örnek:
+
+```javascript
+console.log(screen.orientation); // Ekran yönlendirmesini yazdırır (örn: landscape-primary, portrait-secondary)
+```
+
+Screen nesnesi, web sayfalarının kullanıcı cihazlarına uygun bir şekilde düzenlenmesi için önemli bilgiler sağlar. Bu
+bilgiler, sayfaların mobil uyumluluğunu, ekran boyutlarına uygun arayüzlerin tasarlanmasını ve kullanıcılara daha iyi
+bir deneyim sunulmasını sağlar. Özellikle, responsive (duyarlı) web tasarım için kullanıcı ekran özelliklerini anlamak
+ve kullanmak, modern web geliştirmenin önemli bir parçasıdır.
+
+### Location Nesnesi Nedir
+
+Location nesnesi, JavaScript içinde bulunan ve tarayıcı penceresinin URL'si (Uniform Resource Locator) ile ilgili
+bilgiler sağlayan global bir nesnedir. Bu nesne, tarayıcıda açık olan sayfanın URL'si ve URL içindeki parçaları temsil
+eder. JavaScript, location nesnesine erişerek tarayıcı URL'sini okuyabilir ve değiştirebilir, sayfa yönlendirmeleri
+yapabilir ve URL içindeki parametreleri alabilir.
+
+Location Nesnesinin Bazı Özellikleri ve Metotları:
+
+1. **href:** Tarayıcı penceresinin URL'sini alır veya değiştirir. Sayfayı yönlendirmek veya yeni bir sayfaya
+   yönlendirmek için kullanılabilir.
+
+Örnek:
+
+```javascript
+console.log(location.href); // Tarayıcının URL'sini yazdırır
+location.href = "https://www.example.com"; // Yeni bir sayfaya yönlendirir
+```
+
+2. **origin:** Sayfanın kökenini (protocol, domain ve port) alır.
+
+Örnek:
+
+```javascript
+console.log(location.origin); // Sayfanın kökenini yazdırır (örn: "https://www.example.com")
+```
+
+3. **protocol:** Sayfanın protokolünü (http, https vb.) alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.protocol); // Sayfanın protokolünü yazdırır (örn: "https:")
+location.protocol = "http:"; // Sayfanın protokolünü http olarak değiştirir
+```
+
+4. **host:** Sayfanın sunucu adını ve portunu alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.host); // Sayfanın sunucu adı ve portunu yazdırır (örn: "www.example.com:8080")
+location.host = "www.example.com"; // Sayfanın sunucu adını ve portunu değiştirir
+```
+
+5. **hostname:** Sayfanın sunucu adını (port olmadan) alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.hostname); // Sayfanın sunucu adını yazdırır (örn: "www.example.com")
+location.hostname = "www.example.com"; // Sayfanın sunucu adını değiştirir
+```
+
+6. **pathname:** Sayfanın yolunu (domain sonrası) alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.pathname); // Sayfanın yolunu yazdırır (örn: "/products/index.html")
+location.pathname = "/new-page.html"; // Sayfanın yolunu değiştirir
+```
+
+7. **search:** Sayfanın sorgu parametrelerini alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.search); // Sayfanın sorgu parametrelerini yazdırır (örn: "?id=123&name=example")
+location.search = "?page=2"; // Sayfanın sorgu parametrelerini değiştirir
+```
+
+8. **hash:** Sayfanın URL'sindeki anker (hash) kısmını (yani # sonrasını) alır veya değiştirir.
+
+Örnek:
+
+```javascript
+console.log(location.hash); // Sayfanın anker (hash) kısmını yazdırır (örn: "#section1")
+location.hash = "#section2"; // Sayfanın anker (hash) kısmını değiştirir
+```
+
+Location nesnesi, tarayıcı penceresinin URL'siyle ilgili bilgilere erişmek ve bu bilgileri değiştirmek için kullanılır.
+Sayfa yönlendirmeleri, URL manipülasyonları ve parametre işlemleri gibi birçok işlemi gerçekleştirmede önemli bir role
+sahiptir. Bu nedenle, modern web uygulamaları geliştirirken location nesnesini etkin bir şekilde kullanmak, kullanıcı
+deneyimini artırmada ve sayfa gezintisini yönetmede önemlidir.
