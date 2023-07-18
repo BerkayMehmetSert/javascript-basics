@@ -25,6 +25,8 @@ Bu repository JavaScript temellerini öğrenmek isteyenler için hazırlanmışt
 * [Navigator Nesnesi Nedir](#navigator-nesnesi-nedir)
 * [Screen Nesnesi Nedir](#screen-nesnesi-nedir)
 * [Location Nesnesi Nedir](#location-nesnesi-nedir)
+* [Hata Türleri](#hata-türleri)
+* [Hata Yönetimi](#hata-yönetimi)
 
 ### JavaScript Nedir
 
@@ -1576,3 +1578,146 @@ Location nesnesi, tarayıcı penceresinin URL'siyle ilgili bilgilere erişmek ve
 Sayfa yönlendirmeleri, URL manipülasyonları ve parametre işlemleri gibi birçok işlemi gerçekleştirmede önemli bir role
 sahiptir. Bu nedenle, modern web uygulamaları geliştirirken location nesnesini etkin bir şekilde kullanmak, kullanıcı
 deneyimini artırmada ve sayfa gezintisini yönetmede önemlidir.
+
+### Hata Türleri
+
+JavaScript'te çalışırken kod hataları meydana gelebilir. Bu hatalar, genellikle programın çalışmasını engelleyen ve
+istenmeyen sonuçlara yol açan durumlardır. JavaScript, farklı hata türlerini tanımlar ve her hata türü belirli bir
+hatanın nedenini açıklar. Bu hata türleri, hataları ayırt etmek ve hata ayıklama sürecini kolaylaştırmak için
+kullanılır.
+
+Yaygın olarak karşılaşılan bazı hata türleri:
+
+1. **SyntaxError:** SyntaxError, JavaScript kodunun dil bilgisi (syntax) kurallarına uymadığı durumlarda oluşur.
+   Örneğin, unutulmuş parantezler, yanlış yerleştirilmiş noktalı virgüller, eksik süslü parantezler bu hatanın nedenleri
+   olabilir.
+
+Örnek:
+
+```javascript
+if (x === 5  // Eksik kapanış parantezi
+{
+    console.log("x 5'e eşit.");
+}
+```
+
+2. **ReferenceError:** ReferenceError, tanımlanmamış veya geçerli bir değişken veya fonksiyona erişilmeye çalışıldığında
+   oluşur.
+
+Örnek:
+
+```javascript
+console.log(y); // 'y' değişkeni tanımlanmamış
+```
+
+3. **TypeError:** TypeError, değişkenin veya nesnenin beklenen veri türüyle uyumsuz kullanıldığı durumlarda oluşur.
+
+Örnek:
+
+```javascript
+let num = 42;
+num(); // num bir fonksiyon değil, bu nedenle TypeError oluşur
+```
+
+4. **RangeError:** RangeError, bir nesnenin geçerli aralık dışında kullanıldığı durumlarda oluşur.
+
+Örnek:
+
+```javascript
+function countToFive(num) {
+    if (num > 5) {
+        throw new RangeError("Sayı 5'ten büyük olamaz.");
+    }
+    // ...
+}
+
+countToFive(10); // RangeError: Sayı 5'ten büyük olamaz.
+```
+
+5. **EvalError:** EvalError, eval() fonksiyonunda hata oluştuğunda oluşan bir hatadır. Modern JavaScript'te eval()
+   kullanmak pek önerilmez.
+
+Örnek:
+
+```javascript
+try {
+    eval("x === 5"); // Geçerli değil
+} catch (error) {
+    console.log(error instanceof EvalError); // true
+}
+```
+
+Bu hata türleri, JavaScript kodunda karşılaşılan hataları tanımlar ve kodun hata ayıklanmasını kolaylaştırır. JavaScript
+geliştiricileri, hata yakalama (error handling) yöntemlerini kullanarak bu hata türlerini yönetebilir ve kullanıcı dostu
+hata mesajları sunarak uygulamanın daha sağlam ve güvenilir olmasını sağlayabilir. Hata ayıklama sürecinde, tarayıcı
+konsolu veya try-catch blokları gibi mekanizmalar kullanılarak hata türleri ve hataların nedenleri anlaşılabilir ve
+düzeltilebilir.
+
+### Hata Yönetimi
+
+Hata yönetimi, JavaScript kodunda oluşabilecek hataların etkili bir şekilde ele alınması ve uygun şekilde işlenmesi
+sürecidir. Hata yönetimi, bir web uygulamasının daha güvenilir ve kullanıcı dostu olmasını sağlar.
+
+Hata yönetimi için kullanılan temel yöntemler şunlardır:
+
+1. **Try-Catch Blokları:** Try-catch blokları, JavaScript'te hata yönetimi için yaygın olarak kullanılan bir yapıdır.
+   Kodun belirli bir bölümü "try" bloğu içine yerleştirilir ve bu blok içinde oluşabilecek hatalar izlenir. Eğer bir
+   hata oluşursa, kod "catch" bloğuna geçer ve hata ile ilgili işlemler burada yapılır. Bu sayede, hatalar uygulamanın
+   çökmesini engeller ve kullanıcıya uygun bir geri bildirim sağlanır.
+
+Örnek:
+
+```javascript
+try {
+    // Hata oluşması muhtemel kodlar buraya gelir
+    let result = someFunction();
+    console.log(result); // Eğer someFunction() hata fırlatırsa bu satır çalışmayacak
+} catch (error) {
+    // Hata yönetimi burada yapılır
+    console.error("Hata oluştu: " + error.message);
+}
+```
+
+2. **Error Nesnesi:** JavaScript'te hatalar, Error nesnesi veya Error sınıfı tarafından temsil edilir. Bu nesne, hata
+   ile ilgili bilgileri (hata adı, mesajı, izleme çağrılarını içeren yığın geri izlemesi) içerir. Error nesnesi, hata
+   yakalandığında catch bloğunda kullanılabilir.
+
+Örnek:
+
+```javascript
+try {
+    // Hata oluşması muhtemel kodlar buraya gelir
+    throw new Error("Özel bir hata mesajı"); // Hata fırlatma
+} catch (error) {
+    // Hata yönetimi burada yapılır
+    console.error("Hata adı: " + error.name);
+    console.error("Hata mesajı: " + error.message);
+    console.error("Hata yığındaki çağrılar: " + error.stack);
+}
+```
+
+3. **Finally Bloğu:** Finally bloğu, try-catch bloklarının sonuna eklenen ve her durumda (hata oluşsa da oluşmasa da)
+   çalışan bir bloktur. Genellikle, kaynakları (dosyalar, ağ bağlantıları vb.) serbest bırakmak veya temizlemek için
+   kullanılır.
+
+Örnek:
+
+```javascript
+try {
+    // Hata oluşması muhtemel kodlar buraya gelir
+    let result = someFunction();
+    console.log(result);
+} catch (error) {
+    // Hata yönetimi burada yapılır
+    console.error("Hata oluştu: " + error.message);
+} finally {
+    // Her durumda çalışacak kodlar buraya gelir
+    console.log("Finally bloğu çalıştı.");
+}
+```
+
+Hata yönetimi, JavaScript uygulamalarının sağlamlığını ve kullanıcı deneyimini iyileştiren önemli bir konudur. Hataları
+öngörüp işlemek, uygulamanın daha güvenilir ve kullanıcı dostu olmasını sağlar. Hata mesajlarının anlaşılır ve
+kullanıcıya uygun şekilde sunulması, kullanıcının uygulama ile ilgili geribildirim almasına yardımcı olur. Bu nedenle,
+JavaScript kodu yazarken ve hata yönetimiyle ilgili olarak uygun try-catch blokları ve Error nesneleri kullanmak
+önemlidir.
