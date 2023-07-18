@@ -58,6 +58,7 @@ JavaScript'in temel özellikleri şunlardır:
 
 JavaScript, web geliştirme süreçlerinde çok yaygın olarak kullanılan bir dil olup, sürekli olarak gelişmekte ve
 genişlemektedi
+---
 
 ### JavaScript Yazım Kuralları
 
@@ -167,6 +168,8 @@ yorum
 */
 ```
 
+---
+
 ### Değişkenler
 
 JavaScript programlama dilinde değişken oluşturma ve kullanma işlemleriyle ilgili temel bilgileri içerir. Değişkenler,
@@ -247,6 +250,8 @@ let radius = 5;
 let area = PI * (radius ** 2);
 ```
 
+---
+
 ### Veri Okuma ve Yazma
 
 JavaScript'te veri okuma ve yazdırma işlemi, programınızın çalışma sürecinde bilgileri konsola veya web sayfasına çıktı
@@ -319,6 +324,8 @@ if (result) {
     console.log("Reddedildi!");
 }
 ```
+
+---
 
 ### Veri Tipleri
 
@@ -412,6 +419,7 @@ console.log(typeof value); // Çıktı: "number"
 
 JavaScript veri tipleri, programların temel yapı taşlarıdır ve verilerin doğru şekilde işlenmesi ve depolanmasını
 sağlar. Bu temel veri tiplerini anlamak, JavaScript'te etkili ve doğru programlar yazmanıza yardımcı olacaktır.
+---
 
 ### Veri Tipi Dönüşümleri
 
@@ -486,6 +494,7 @@ let result = number > booleanValue; // true (boolean) olarak otomatik dönüşü
 Veri tipi dönüşümleri, değişkenlerin farklı veri tipleri arasında uygun şekilde dönüştürülmesini ve işlenmesini sağlar.
 Ancak dönüşümler sırasında dikkatli olunmalıdır, çünkü beklenmedik sonuçlara neden olabilirler. Bu nedenle, dönüşümleri
 açıkça belirtmek veya koşulları iyi düzenlemek önemlidir.
+---
 
 ### Operatörler
 
@@ -582,6 +591,7 @@ console.log(!a); // false
 JavaScript operatörleri, programlarda verileri işlemek ve kontrol etmek için önemli araçlardır. Doğru operatörleri
 kullanarak, kodunuzun daha etkili ve verimli olmasını sağlayabilirsiniz. Operatörlerin öncelik sırası ve etkileşimleri
 konusunda dikkatli olmak, doğru sonuçlar almanızı sağlar.
+---
 
 ### Koşullu İfadeler
 
@@ -663,6 +673,7 @@ console.log("Bugün " + dayName);
 Koşullu ifadeler, programın belirli koşullara göre akışını kontrol etmek ve farklı senaryolara uygun tepkiler vermek
 için kullanılır. Programların daha esnek ve karmaşık işlevselliğe sahip olmasını sağlarlar. Doğru koşullu ifadeler
 kullanarak, kodunuzun daha okunabilir ve anlaşılabilir olmasını sağlayabilirsiniz.
+---
 
 ### Döngüler
 
@@ -741,6 +752,7 @@ Döngüler, programlamada tekrarlayan işlemleri kolaylaştıran ve kodun daha a
 önemli bir yapıdır. Döngüler sayesinde, verileri listelemek, hesaplamalar yapmak, verileri filtrelemek ve diğer birçok
 işlemi yapmak daha kolay ve etkili hale gelir. Doğru döngü tipini ve koşulları seçmek, verimli ve hatasız kod yazmanızı
 sağlar.
+---
 
 ### Fonksiyonlar
 
@@ -819,6 +831,7 @@ let result = multiply(2, 4); // result değeri 8 olacaktır.
 JavaScript'te fonksiyonlar, kodu daha modüler hale getirir ve aynı işlemi tekrar tekrar yazmak yerine, bir fonksiyon
 kullanarak kolayca çağırabiliriz. Fonksiyonlar, karmaşık işlemleri basit adımlara bölmek ve kodu daha düzenli hale
 getirmek için önemli bir yapıdır.
+---
 
 ### Gömülü Fonksiyonlar
 
@@ -915,6 +928,7 @@ let ceilNumber = Math.ceil(2.1); // Değeri 3'e yuvarlar (üst tamsayıya dönü
 
 Gömülü JavaScript fonksiyonları, programlamayı kolaylaştırır ve çeşitli işlemleri hızlı bir şekilde gerçekleştirmeyi
 sağlar. Bu fonksiyonlar, temel işlemlerden daha karmaşık işlemlere kadar geniş bir yelpazede kullanılabilir.
+---
 
 ### Nesne Tabanlı Programlama
 
@@ -1017,6 +1031,7 @@ Bu örnekte, "Araba" sınıfı, temel araba özelliklerini ve davranışlarını
 sınıfları, "Araba" sınıfından kalıtım alarak kendilerine özgü özellikler ve davranışlar ekler. Bu sayede, farklı araba
 türlerini temsil eden nesneler oluşturabilir ve her bir nesne için özel davranışlar çağırabiliriz. Kalıtım sayesinde kod
 tekrarını önler ve farklı araba türleri arasında benzerlikleri koruruz.
+---
 
 ### Diziler
 
@@ -1116,6 +1131,8 @@ let upperCaseFruits = fruits.map(function (fruit) {
 });
 ```
 
+---
+
 ### DOM Nedir
 
 JavaScript, web sayfalarının içeriği ve yapısını programlı bir şekilde değiştirmek ve etkileşim sağlamak için kullanılan
@@ -1199,6 +1216,7 @@ listItems.forEach(function (item) {
 
 DOM, web sayfalarını etkileşimli ve dinamik hale getirmek için önemli bir araçtır. JavaScript kullanarak DOM'u anlamak
 ve etkin bir şekilde kullanmak, web geliştirme sürecinde çok değerli bir yetenektir.
+---
 
 ### HTML Olayları Nedir
 
@@ -1290,6 +1308,7 @@ HTML Olayları Kullanımı:
 JavaScript ile HTML olayları kullanarak, web sayfalarında kullanıcı etkileşimlerini yakalayabilir ve kullanıcılara daha
 iyi bir deneyim sunabiliriz. Olayları yakalamak ve işlemek, web sayfalarını dinamik, etkileşimli ve verimli hale
 getirmede önemli bir rol oynar.
+---
 
 ### Window Nesnesi Nedir
 
@@ -1368,6 +1387,7 @@ Window nesnesi, JavaScript'te tarayıcıyla etkileşim sağlamak için çok öne
 pencereler açma, zamanlayıcılar oluşturma, kullanıcı etkileşimleri yönetme ve tarayıcı özelliklerine erişim gibi birçok
 işlemi yönetmemizi sağlar. Tarayıcı tabanlı JavaScript uygulamaları geliştirirken window nesnesini doğru bir şekilde
 kullanmak, web sayfalarını daha etkileşimli ve kullanıcı dostu hale getirmemize yardımcı olur.
+---
 
 ### Navigator Nesnesi Nedir
 
@@ -1433,6 +1453,7 @@ Navigator nesnesi, JavaScript içinde tarayıcı hakkında bilgi edinmenin ve ba
 bir yoludur. Bu bilgiler, web sitelerinin ziyaretçilere uygun içerik sunmasını, kullanıcı deneyimini geliştirmesini ve
 tarayıcı uyumluluğunu sağlamasını kolaylaştırır. Ancak, kullanıcı ajanı gibi bilgilerin güvenilirliği, tarayıcı
 tarafından değiştirilebileceği için dikkatli bir şekilde kullanılmalıdır.
+---
 
 ### Screen Nesnesi Nedir
 
@@ -1492,6 +1513,7 @@ Screen nesnesi, web sayfalarının kullanıcı cihazlarına uygun bir şekilde d
 bilgiler, sayfaların mobil uyumluluğunu, ekran boyutlarına uygun arayüzlerin tasarlanmasını ve kullanıcılara daha iyi
 bir deneyim sunulmasını sağlar. Özellikle, responsive (duyarlı) web tasarım için kullanıcı ekran özelliklerini anlamak
 ve kullanmak, modern web geliştirmenin önemli bir parçasıdır.
+---
 
 ### Location Nesnesi Nedir
 
@@ -1578,6 +1600,7 @@ Location nesnesi, tarayıcı penceresinin URL'siyle ilgili bilgilere erişmek ve
 Sayfa yönlendirmeleri, URL manipülasyonları ve parametre işlemleri gibi birçok işlemi gerçekleştirmede önemli bir role
 sahiptir. Bu nedenle, modern web uygulamaları geliştirirken location nesnesini etkin bir şekilde kullanmak, kullanıcı
 deneyimini artırmada ve sayfa gezintisini yönetmede önemlidir.
+---
 
 ### Hata Türleri
 
@@ -1652,6 +1675,7 @@ geliştiricileri, hata yakalama (error handling) yöntemlerini kullanarak bu hat
 hata mesajları sunarak uygulamanın daha sağlam ve güvenilir olmasını sağlayabilir. Hata ayıklama sürecinde, tarayıcı
 konsolu veya try-catch blokları gibi mekanizmalar kullanılarak hata türleri ve hataların nedenleri anlaşılabilir ve
 düzeltilebilir.
+---
 
 ### Hata Yönetimi
 
@@ -1721,3 +1745,13 @@ Hata yönetimi, JavaScript uygulamalarının sağlamlığını ve kullanıcı de
 kullanıcıya uygun şekilde sunulması, kullanıcının uygulama ile ilgili geribildirim almasına yardımcı olur. Bu nedenle,
 JavaScript kodu yazarken ve hata yönetimiyle ilgili olarak uygun try-catch blokları ve Error nesneleri kullanmak
 önemlidir.
+---
+
+## Kaynaklar
+
+- [W3Schools](https://www.w3schools.com/js/default.asp)
+- [BTK Akademi](https://www.btkakademi.gov.tr/portal/course/javascript-temelleri-25317)
+
+## Lisans
+
+Bu proje MIT lisansı ile lisanslanmıştır. Daha fazla bilgi için [LICENSE ©](LICENSE) dosyasına bakabilirsiniz.
